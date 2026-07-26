@@ -1,32 +1,71 @@
-# React + TypeScript + Vite
+# GiardDesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+GiardDesign to nowoczesna, responsywna strona internetowa poświęcona projektowaniu i realizacji ogrodów. Projekt został stworzony na bazie gotowego szablonu w ramach zadania rekrutacyjnego.
 
-Currently, two official plugins are available:
+Strona została zaprojektowana z uwzględnieniem widoku zarówno na komputery, jak i urządzenia mobilne.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologie
 
-## React Compiler
+Projekt został wykonany z wykorzystaniem:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React** – do budowy interfejsu użytkownika oraz podziału aplikacji na niezależne komponenty,
+* **TypeScript** – dla typowania komponentów, propsów i danych,
+* **Tailwind CSS** – do stylowania interfejsu i tworzenia responsywnego layoutu,
+* **Framer Motion** – do tworzenia animacji i płynnych przejść,
+* **Vite** – jako narzędzie do szybkiego uruchamiania i budowania aplikacji.
 
-## Expanding the Oxlint configuration
+## Funkcjonalności i responsywność
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Funkcjonalności
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+W ramach zadania rekrutacyjnego otrzymany gotowy szablon został rozbudowany o funkcjonalności oraz interakcje wymagane w treści zadania:
+
+* **Rozwijane menu „Oferta”** – dodano możliwość rozwijania menu zawierającego dodatkowe opcje oferty.
+* **Wysuwająca się wyszukiwarka** – po kliknięciu ikony lupy pojawia się animowany box z polem wyszukiwania.
+* **Działający slider w sekcji Hero** – dodano funkcjonalny slider umożliwiający przełączanie slajdów oraz automatyczną zmianę prezentowanych treści.
+* **Rozwijana galeria** – dodano możliwość rozwinięcia galerii i wyświetlenia większej liczby realizacji.
+* **Popup w galerii** – dodano możliwość otwierania zdjęć w powiększonym widoku oraz ich przeglądania w formie popupu.
+* **Pozostałe elementy** – pozostałe funkcjonalności oraz elementy strony zostały zachowane i zaimplementowane zgodnie z otrzymanym szablonem.
+  
+### Responsywność
+
+Strona została zaprojektowana z uwzględnieniem widoku zarówno na komputery, jak i urządzenia mobilne. Układ oraz poszczególne elementy interfejsu dostosowują się do szerokości ekranu, zapewniając wygodne korzystanie z serwisu na różnych urządzeniach.
+
+Responsywność obejmuje między innymi:
+
+* dostosowanie układu sekcji do różnych rozmiarów ekranów,
+* responsywną nawigację,
+* mobilne menu rozwijane,
+* zmianę układu galerii,
+* dostosowanie slidera do urządzeń mobilnych,
+* odpowiednie skalowanie i rozmieszczenie elementów interfejsu.
+
+
+## Struktura komponentów
+
+Projekt został podzielony na niezależne komponenty React, dzięki czemu kod jest uporządkowany i łatwy do rozwijania.
+
+Struktura:
+
+```text
+src/
+├── components/
+│   ├── AboutSection.tsx
+│   ├── ContactSection.tsx
+│   ├── Footer.tsx
+│   ├── GallerySection.tsx
+│   ├── Header.tsx
+│   ├── HeroSection.tsx
+│   ├── Icon.tsx
+│   └── ServicesSection.tsx
+│
+├── assets/
+│   ├── brush.svg
+│   ├── eye.svg
+│   ├── sparkle.svg
+│   └── logo-adRespect.svg
+│
+└── App.tsx
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Główny komponent `App` odpowiada za złożenie poszczególnych sekcji strony oraz obsługę wspólnej nawigacji pomiędzy nimi.
